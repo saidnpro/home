@@ -3,30 +3,327 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Centered Paragraph in Header</title>
+  <link rel="icon" href="fav.png" type="image/x-icon">
+  <title>Said Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
   <style>
-    header {
-      background-color: #f0f0f0; /* light gray background */
-      padding: 20px;
-      text-align: center; /* centers text inside the header */
+  <style>
+     /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+   
+      body {
+            text-align: center;
+            max-width: 1550px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        background-color: #475261;
+    
+        
+        }
+
+   
+      /* Hide unnecessary elements */
+        #comments,
+        #blog-pager,
+        #Attribution1,
+        .feed-links,
+        .post-share-buttons.goog-inline-block,
+        .widget.Attribution,
+        #navbar,
+        .post-footer {
+            display: none;
+        }
+   
+   
+   
+   /* Portfolio header styles */
+   
+   
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+   
+   
+   header {
+    display: flex;
+    justify-content: space-between; /* Push logo left, nav right */
+    align-items: center;
+    padding: 10px 40px; /* More padding for outer spacing */
+    background-color: black;
+    width: 100%;
+    max-width: 1500px;
+     margin-top: 10px;
+}
+
+   .said-text {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Logo Styling */
+.new-logo {
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px; /* More space between image and "Said" text */
+    animation: slideUpHeader 1s ease-out;
+    margin-right: 20vh;
+   margin-left: 20vh;
+   white-space: nowrap;
+}
+
+/* Navigation Menu */
+.new-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* More space between nav links */
+    animation: slideUpHeader 1s ease-out;
+    margin-left: auto; /* Push nav to the far right */
+    margin-right: 30vh;
+}
+
+/* Nav Links */
+.new-nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+    font-weight: bold;
+  
+  
+    font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Hover Effects */
+.new-nav-links li a:hover {
+    color: black;
+    background-color: white;
+}
+    
+    /* Slide-Up Animation for Header */
+    @keyframes slideUpHeader {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
-    header p {
-      margin: 0;
-      font-size: 18px;
-      color: #333;
+   
+   
+   @media screen and (max-width: 1180px) {
+     
+     
+/* Logo Styling */
+.new-logo {
+    
+    margin-right: 30vh;
+   margin-left: 8vh;
+   white-space: nowrap;
+}
+
+     
+     .new-nav-links li a {
+
+  white-space: nowrap;
+}
+
+
+ 
+     
+     
+}
+   
+   
+      
+   @media screen and (max-width: 900px) {
+     
+     
+/* Logo Styling */
+.new-logo {
+    
+    margin-right: 10vh;
+   margin-left: 10vh;
+   white-space: nowrap;
+}
+
+
+     .new-nav-links li a {
+
+  white-space: nowrap;
+}
+     
+     
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /* Burger icon hidden by default */
+#new-burger {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .new-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  #new-burger {
+    display: block;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+    .new-nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 95vh;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
     }
-  </style>
+
+
+
+  .new-nav-links.active {
+    display: flex;
+  }
+
+  
+    .new-nav-links.active {
+        display: flex;
+    }
+
+    .new-nav-links li {
+        margin: 15px 0;
+        padding: 0 30px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .new-nav-links li a {
+        font-size: 24px;
+        color: white;
+        display: block;
+        padding: 15px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .new-nav-links li a:hover {
+        background-color: white;
+        color: black;}
+  
+  }
+
+
+  
+  
+@media (max-width: 850px) {
+  
+   #new-burger{
+      margin-right: 12vh;
+     }
+  
+
+     .new-logo {
+    
+   
+   margin-left: 15vh;
+   white-space: nowrap;
+}
+  
+ 
+  }
+
+
+
+
+</style>
 </head>
 <body>
   <header>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
-    <p>This paragraph is centered inside the header.</p>
+    <div class="new-logo" id="logo2">
+      <a href="https://saidvision.blogspot.com/p/home.html">
+        <img alt="Logo Image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP0bTQENW0nZo1drDhbCxB9pDkL8fvBr4n43QUkuFvH_OUygWgqrcSS9EDrptcJGCp4Dab6vxMdDrAxu4Tw4Ist2co_YNFcWIoeaE7n1xVGu_WtnaGFva_TKH3My7yfMiXDchdQIgM4EqWbEAjLPEkCscUSaWGkjQMRHQIXW_3TVbg9m-3mxD8baDPRkCl/s322/Untitled-1%20said%20png.png" style="width: 50px; vertical-align: middle;" />
+      </a>
+      <span class="said-text">Said</span>
+    </div>
+  <nav>
+    <div id="new-burger">&#9776;</div> <!-- hamburger icon -->
+    <ul class="new-nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Links</a></li>
+      <li><a href="#">Resume</a></li>
+      <li><a href="#">Cover</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
   </header>
+    
+      
+    
+    
+    
+  <script>
+    document.getElementById("new-burger").addEventListener("click", function () {
+      document.querySelector(".new-nav-links").classList.toggle("active");
+    });
+  </script>
+  
+
+
 </body>
 </html>
