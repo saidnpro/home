@@ -310,8 +310,14 @@
       document.querySelector(".new-nav-links").classList.toggle("active");
     });
   </script>
-  
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Prevent horizontal overflow on body
+  document.body.style.overflowX = "hidden";
 
-
+  // Optional: Also apply it to html tag
+  document.documentElement.style.overflowX = "hidden";
+});
+  </script>
 </body>
 </html>
