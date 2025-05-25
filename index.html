@@ -211,14 +211,15 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    transform: translateY(100%);
+    transform: translateX(-125%);
     opacity: 0;
     transition: transform 0s ease, opacity 0s ease;
     z-index: 999;
+    
   }
 
   .nav-links-v1.active {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     animation: slideUpHeader 1.2s ease-out forwards;
   }
@@ -248,6 +249,32 @@ nav {
 
 /* Mobile: 768px and below */
 @media (max-width: 768px) {
+
+
+  .nav-links-v1 {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translateX(-125%);
+    opacity: 0;
+    transition: transform 0s ease, opacity 0s ease;
+    z-index: 999;
+    
+  }
+
+  .nav-links-v1.active {
+    transform: translateX(0);
+    opacity: 1;
+    animation: slideUpHeader 1.2s ease-out forwards;
+  }
+
   .nav-links-v1 {
     height: 80vh;
     gap: 15px;
@@ -2385,6 +2412,13 @@ margin-left: 2%;
   }
      
 
+
+
+  #btn-2:hover{
+    scale: 110%;
+    transition: 0.5s ease-in-out;
+  }
+
      
     
 </style>
@@ -2459,9 +2493,15 @@ margin-left: 2%;
         <div class="paragraph-wrapper">
           <p id="myParagraph2">Front end design with elementor</p>
         </div>
+
+
+      
+
+
         <div class="button-wrapper">
           <a href="https://saidpro.byethost7.com/" target="_blank" id="btn-2"><span>WordPress website</span></a>
         </div>
+
       </div>
     </div>
   </div>
