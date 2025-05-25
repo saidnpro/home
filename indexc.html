@@ -2144,7 +2144,89 @@ body {
       .contact-button button:hover {
         background-color: #218838;
       }
- 
+      @media (max-width: 800px) {
+        .contact-wrapper {
+          flex-direction: column;
+          margin: 0 16px; /* Add horizontal margin on mobile */
+        }
+        .contact-left,
+        .contact-right {
+          padding: 15px 10vw; /* Responsive horizontal padding */
+          width: 100%;
+        }
+        .contact-right h2 {
+          text-align: left;
+          padding-left: 1px;
+          padding-right: 1px;
+        }
+        .contact-button {
+          justify-content: left;
+          padding-left: 1px;
+          padding-right: 1px;
+          margin-left: -6%;
+        }
+        
+
+
+        .contact-button button {
+       
+        font-size: 11px;
+        padding-right: 40px;
+        font-weight: bold;
+    
+        
+      }
+        
+
+
+
+        .contact-item span {
+        font-size: 11px;
+        margin-left: -2%;
+        font-weight: bold;
+        text-align: left;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+    
+        
+        
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        word-break: break-word;
+        padding-left: 1px;
+        padding-right: 1px;
+        margin-left: -8%;
+    }
+    
+
+   
+    
+    
+    
+    
+    .contact-left img {
+   
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        max-width: 100%;
+        padding-left: 58px;
+        padding-right: 55px;
+        padding-bottom: 1px;
+        padding-top: 32px;
+        margin-bottom: 1px;
+        box-sizing: border-box;
+    }   
+
+
+  
+
+    }
+    
      
     @media (max-width: 1120px) {
       
@@ -2162,13 +2244,13 @@ body {
         }
         .contact-right h2 {
           text-align: left;
-          padding-left: 0px;
-          padding-right: 0px;
+          padding-left: 90px;
+          padding-right: 10px;
         }
         .contact-button {
           justify-content: left;
-          padding-left: 0px;
-          padding-right: 0px;
+          padding-left: 100px;
+          padding-right: 10px;
         }
         
         
@@ -2179,8 +2261,8 @@ body {
         align-items: center;
         margin-bottom: 15px;
         word-break: break-word;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 88px;
+        padding-right: 10px;
     }
     
 
@@ -2212,36 +2294,18 @@ body {
 
 
 
-    
+
      .dark-banner-content{
-      padding-top: 100px;
+      padding-top: 150px;
      }
 
-  
+     
 
 
      .footer-container{
-      padding-bottom: 250px;
+      padding-bottom: 150px;
 
      }
-
-
-
-    
-
-
-
-     
-    @media (max-width: 750px) {
-      
-      .contact-right{
-        margin-left: -50px;
-
-        }
-
-      
-       }
-
      
 
      
