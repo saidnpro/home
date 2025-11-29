@@ -2463,6 +2463,169 @@ controle image and text max width with this code
     .center-button:hover {
       background-color: darkblue;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Top orange bar */
+    .top-bar {
+      background-color: #ff9800;
+      height: 40px;
+      width: 100%;
+      max-width: 1450px;
+    }
+
+    /* Cover letter section */
+    .cover-letter-section {
+      background-color: #0c0c82; /* blue background */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 400px;          /* Fixed height */
+      text-align: center;
+      padding: 20px;
+
+      width: 100%;
+      max-width: 1450px; /* Maximum width */
+      margin: 0 auto;    /* Centered */
+    }
+
+    .cover-letter-section h1 {
+      font-size: 1.7rem;
+      margin-bottom: 50px; /* More space below heading */
+      margin-left: 5%;
+      margin-right: 5%;
+      font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+
+    /* Buttons wrapper */
+    .cover-letter-section .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px; /* more spacing between buttons */
+    }
+
+    /* Scoped button styles */
+    .cover-letter-section .btn {
+      border: 3px solid #ff9800;
+      color: white;
+      background: transparent;
+      padding: 12px 40px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none; /* remove underline */
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .cover-letter-section .btn:hover {
+      background-color: #00420a;
+      color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 1120px) {
+      .cover-letter-section h1 {
+        font-size: 11px;
+        margin-bottom: 20px;
+        margin-right: 8%;
+        margin-right: 8%;
+    
+      }
+
+      .cover-letter-section .btn {
+        width: 80%;
+        padding: 12px;
+        text-align: center;
+      }
+      .button-group .btn{
+        font-size: 12px;
+
+      }
+
+
+
+
+    }
+
+
+   .site-footer{
+    margin-top: 0;
+   }
+
+
+   #important1{
+    background-color: #050546;
+
+   }
+
+
+   #important2{
+    background-color: #161690;
+
+   }
+
+
+   #top-bar2{
+    background-color: #c00000;
+
+   }
+
+
+
+   .important-a{
+    background-color: #050546;
+
+   }
+
+   #important-b{
+    background-color: #161690;
+
+   }
+
+
+
+   .top-bar2 {
+      background-color: #ff990070;
+      height: 12px;
+      width: 100%;
+      max-width: 1450px;
+    }
+
+    /* Second bar */
+    .top-bar2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      
+      color: rgb(7, 1, 1);
+    }
+
+
+    .top-bar2 span {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 </style>
 </head>
 <body>
@@ -2485,8 +2648,8 @@ controle image and text max width with this code
         <ul class="nav-links-v1" id="nav-links-v1">
           <li><a href="https://saidnpro.github.io/home/">Home</a></li>
           <li><a href="https://www.linkedin.com/in/saidnouasria"  target="_blank">Linkedin</a></li>
-          <li><a href="https://drive.google.com/file/d/1mcttYvYVDJ_gYb6HDFRz6h-m_rA7zqj3/view?usp=sharing" target="_blank">Resume</a></li>
-          <li><a href="https://drive.google.com/file/d/1ea7wfKxf5zS-nm0NJyk4JGylU4Mu48nF/view?usp=sharing" target="_blank">Cover</a></li>
+          <li><a href="https://drive.google.com/file/d/1DoCbhXweRpk5ILa-hME1y6TvVgxA4fWR/view?usp=sharing" target="_blank">Full Resume</a></li>
+          <li><a href="https://drive.google.com/file/d/1e3GvL5mqzq4LYxHFsXojC90uahidsvZS/view?usp=sharing" target="_blank">Full Cover</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -2647,12 +2810,22 @@ controle image and text max width with this code
 
 
 
+<div class="top-bar" id="top-bar2"></div>
 
+<section id="important1"  class="cover-letter-section">
+  <h1>It would be an honor if you take a look at my cover letters and resumes for onsite or remote work. They are available in PDF format in both French and English, with each skill described in detail. All cover PDFs are stored on Google Drive and linked on this page to ensure safe and smooth access.</h1>
+  <div class="button-group">
+    <a href="https://saidnpro.github.io/home/office.html" class="btn" target="_blank">For Onsite And Remote Work</a>
+    <a href="https://saidnpro.github.io/home/remot.html" class="btn" target="_blank">For Remote Work</a>
+  </div>
+</section>
         
+
+<div class="top-bar"></div>
   
        
       <div class="white-text">
-        <p>Below, you’ll find samples that showcase the quality of my work</p>
+        <p>I would love to invite you to see some examples below that showcase the quality of my work</p>
       </div>
 
 
@@ -2754,7 +2927,7 @@ controle image and text max width with this code
       <div class="contact-wrapper">
         <!-- Container 1: Map -->
         <div class="contact-left">
-          <img src="https://res.cloudinary.com/dfqqsfbpg/image/upload/v1747827257/blogger%20image%20said/uvk8d1xub4nsosw7x6ob.png" alt="Map Image">
+          <img src="maps.png" alt="Map Image">
         </div>
         <!-- Container 2: Contact Info -->
         <div class="contact-right">
@@ -2770,7 +2943,12 @@ controle image and text max width with this code
           </div>
           <div class="contact-item">
             <i class="fa-brands fa-whatsapp"></i>
-            <span>WhatsApp: +212 720 478379</span>
+            <span>call and whatsapp: +212 720 478379</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>call and whatsapp: +212 615 930928</span>
           </div>
           <div class="contact-button">
             <a href="https://wa.me/212720478379" target="_blank" style="text-decoration: none;">
@@ -2789,7 +2967,7 @@ controle image and text max width with this code
         
         
       
-      <!-- Footer Section -->
+          <!-- Footer Section -->
 <footer class="site-footer">
   <div class="footer-container">
     
@@ -2815,12 +2993,7 @@ controle image and text max width with this code
             </span>
           </a>
         </li>
-        <li>
-          <a href="https://drive.google.com/file/d/1URW6Qbs2uCGSzV5LtXdvJ0aZNaINmq_z/view?usp=sharing" target="_blank">
-            <i class="fa-regular fa-file"></i>
-            <span>Resume download</span>
-          </a>
-        </li>
+       
       </ul>
     </div>
 
@@ -2845,12 +3018,7 @@ controle image and text max width with this code
             <span>Behance</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            <i class="fa-solid fa-phone"></i>
-            <span>Call: +212 720 478379</span>
-          </a>
-        </li>
+       
       </ul>
     </div>
 
