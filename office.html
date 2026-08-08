@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="fav.png" type="image/x-icon">
+  <title>Said Portfolio — Onsite &amp; Remote Covers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poetsen+One&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #020b18;
+      --bg-surface: #071428;
+      --bg-card: #0a1e3a;
+      --bg-card2: #0d2244;
+      --accent: #3b82f6;
+      --accent-bright: #60a5fa;
+      --text-primary: #e8f0fe;
+      --text-secondary: #94a3b8;
+      --text-dim: #64748b;
+      --border: rgba(59,130,246,0.18);
+      --border-bright: rgba(59,130,246,0.45);
+      --header-bg: rgba(2,11,24,0.92);
+      --glow-blue: 0 0 24px rgba(59,130,246,0.4), 0 0 8px rgba(59,130,246,0.2);
+      --orange: #f97316;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg-main); color:var(--text-primary); overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; align-items:center; }
+    #particles-canvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:0.4; }
+    header { position:sticky; top:0; z-index:1000; width:100%; background:var(--header-bg); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--border); box-shadow:0 2px 32px rgba(0,0,0,0.5); animation:slideDownHeader 0.7s ease-out; }
+    @keyframes slideDownHeader{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+    .header-container { max-width:1200px; margin:0 auto; padding:14px 32px; display:flex; justify-content:space-between; align-items:center; }
+    .logo-container { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .logo-container img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--accent); box-shadow:var(--glow-blue); }
+    .said-v1 { font-family:'Poetsen One',sans-serif; font-size:22px; color:var(--text-primary); letter-spacing:1px; }
+    nav ul { list-style:none; display:flex; gap:6px; }
+    nav ul li a { font-family:'Poetsen One',sans-serif; text-decoration:none; color:var(--text-secondary); padding:8px 16px; border-radius:6px; font-size:14px; transition:all 0.3s; border:1px solid transparent; }
+    nav ul li a:hover { color:var(--accent-bright); background:rgba(59,130,246,0.1); border-color:var(--border-bright); box-shadow:var(--glow-blue); }
+    .burger { display:none; font-size:22px; color:var(--text-primary); cursor:pointer; padding:8px; border-radius:6px; border:1px solid var(--border); transition:all 0.3s; }
+    .burger:hover { border-color:var(--accent); color:var(--accent-bright); }
+    @media(max-width:900px) {
+      nav ul { position:fixed; top:0; left:-100%; width:100%; height:100vh; flex-direction:column; align-items:center; justify-content:center; background:rgba(2,11,24,0.98); backdrop-filter:blur(20px); gap:24px; transition:left 0.4s ease; z-index:999; }
+      nav ul.active { left:0; }
+      nav ul li a { font-size:18px; padding:14px 40px; }
+      .burger { display:block; }
+      .header-container { padding:14px 20px; }
+    }
+
+
+
+    @media (max-width: 900px) {
+  .logo-container {
+    transform: translateX(50px); /* ← change 12px to move more or less right */
+    
+  }
+
+  .burger {
+
+  transform: translateX(50px); 
+    
+  }
+}
+
+
+
+    /* PAGE HERO */
+    .page-hero {
+      position:relative; z-index:1; width:100%; max-width:1460px;
+      padding:100px 40px 70px; text-align:center;
+      background:linear-gradient(135deg, #020b18 0%, #071428 50%, #0a1e3a 100%);
+      overflow:hidden;
+    }
+    .page-hero::before { content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:700px; height:500px; background:radial-gradient(ellipse, rgba(59,130,246,0.1) 0%, transparent 70%); pointer-events:none; }
+    .page-hero-label { display:inline-flex; align-items:center; gap:8px; background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.3); color:#fb923c; padding:6px 16px; border-radius:50px; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px; animation:fadeInDown 0.8s ease-out; }
+    @keyframes fadeInDown{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .page-hero h1 { font-family:'Poetsen One',sans-serif; font-size:clamp(2rem,5vw,3.2rem); background:linear-gradient(135deg,#e8f0fe 0%,#93c5fd 50%,#60a5fa 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:16px; animation:fadeInUp 0.8s ease-out; }
+    .page-hero p { color:var(--text-secondary); font-size:15px; max-width:700px; margin:0 auto; line-height:1.8; animation:fadeInUp 1s ease-out; }
+    @keyframes fadeInUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+    /* OFFICE BADGE */
+    .remote-badge {
+      position:relative; z-index:1; width:100%; max-width:1200px;
+      padding:0 40px; margin-top:16px;
+    }
+    .remote-highlight {
+      display:flex; align-items:center; gap:16px;
+      background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(59,130,246,0.06));
+      border:1px solid rgba(16,185,129,0.2);
+      border-radius:12px; padding:20px 28px;
+      color:var(--text-secondary); font-size:14px; line-height:1.7;
+      opacity:0; transform:translateY(20px);
+      transition:opacity 0.7s ease,transform 0.7s ease;
+    }
+    .remote-highlight.visible { opacity:1; transform:translateY(0); }
+    .remote-highlight i { color:#34d399; font-size:20px; flex-shrink:0; }
+    @media(max-width:700px){.remote-badge{padding:0 20px;}}
+
+    /* CARDS GRID */
+    .covers-section {
+      position:relative; z-index:1; width:100%; max-width:1200px;
+      padding:60px 40px 80px;
+      display:flex; flex-direction:column; gap:20px;
+    }
+    @media(max-width:700px){.covers-section{padding:40px 20px;}}
+
+    .cover-card {
+      display:flex; align-items:center; justify-content:space-between;
+      background:linear-gradient(135deg, var(--bg-card), var(--bg-card2));
+      border:1px solid var(--border);
+      border-radius:14px; padding:28px 36px;
+      gap:24px; flex-wrap:wrap;
+      opacity:0; transform:translateY(30px);
+      transition:opacity 0.6s ease, transform 0.6s ease, border-color 0.3s, box-shadow 0.3s;
+      box-shadow:0 2px 20px rgba(0,0,0,0.3);
+    }
+    .cover-card.visible { opacity:1; transform:translateY(0); }
+    .cover-card:hover { border-color:var(--border-bright); box-shadow:0 4px 40px rgba(59,130,246,0.15); }
+    .cover-card-left { display:flex; align-items:center; gap:20px; flex:1; min-width:200px; }
+    .cover-num {
+      width:52px; height:52px; border-radius:12px;
+      background:linear-gradient(135deg, var(--accent), #1d4ed8);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Poetsen One',sans-serif; font-size:18px; color:#fff;
+      flex-shrink:0; box-shadow:0 4px 16px rgba(59,130,246,0.3);
+    }
+    .cover-info h3 { font-family:'Poetsen One',sans-serif; font-size:1.05rem; color:var(--text-primary); margin-bottom:4px; }
+    .cover-info span { font-size:12px; color:var(--text-dim); font-weight:500; letter-spacing:0.5px; }
+    .cover-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .dl-btn {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 20px; border-radius:8px; font-weight:600; font-size:13px;
+      text-decoration:none; transition:all 0.3s; letter-spacing:0.3px;
+    }
+    .dl-btn.en {
+      background:linear-gradient(135deg, var(--accent), #1d4ed8);
+      color:#fff; box-shadow:0 3px 14px rgba(59,130,246,0.3);
+    }
+    .dl-btn.en:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(59,130,246,0.45); }
+    .dl-btn.fr {
+      background:rgba(59,130,246,0.08);
+      border:1px solid var(--border-bright);
+      color:var(--accent-bright);
+    }
+    .dl-btn.fr:hover { background:rgba(59,130,246,0.15); transform:translateY(-2px); box-shadow:var(--glow-blue); }
+
+    /* SECTION DIVIDERS */
+    .section-header {
+      display:flex; align-items:center; gap:16px;
+      margin:20px 0 8px;
+      opacity:0; transform:translateY(20px);
+      transition:opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section-header.visible { opacity:1; transform:translateY(0); }
+    .section-header-line { flex:1; height:1px; background:linear-gradient(90deg, var(--border), transparent); }
+    .section-header-label {
+      display:flex; align-items:center; gap:8px;
+      background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.25);
+      color:#fb923c; padding:6px 16px; border-radius:50px;
+      font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    /* FOOTER */
+    .divider-full { width:100%; max-width:1460px; height:1px; background:linear-gradient(90deg,transparent,var(--accent),transparent); position:relative; z-index:1; }
+    footer { position:relative; z-index:1; width:100%; background:var(--bg-surface); border-top:1px solid var(--border); padding:52px 40px; }
+    .footer-inner { max-width:1200px; margin:0 auto; display:flex; gap:60px; flex-wrap:wrap; justify-content:center; }
+    .footer-col { min-width:220px; }
+    .footer-col + .footer-col { padding-left:60px; border-left:1px solid var(--border); }
+    .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:18px; }
+    .footer-col ul li a { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--text-secondary); font-size:14px; font-weight:500; transition:all 0.3s; }
+    .footer-col ul li a:hover { color:var(--accent-bright); transform:translateX(4px); }
+    .footer-col ul li a i { width:32px; height:32px; border-radius:50%; background:rgba(59,130,246,0.1); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--accent-bright); transition:all 0.3s; flex-shrink:0; }
+    .footer-col ul li a:hover i { background:rgba(59,130,246,0.2); border-color:var(--border-bright); box-shadow:var(--glow-blue); }
+    .footer-bottom { text-align:center; color:var(--text-dim); font-size:13px; padding-top:24px; border-top:1px solid var(--border); max-width:1200px; margin:40px auto 0; }
+    @media(max-width:640px){ .footer-inner{gap:32px;} .footer-col+.footer-col{padding-left:0;border-left:none;border-top:1px solid var(--border);padding-top:32px;} footer{padding:40px 20px;} }
+    @media(max-width:600px){ .cover-card{flex-direction:column;align-items:flex-start;padding:22px 20px;} .cover-actions{width:100%;} .dl-btn{flex:1;justify-content:center;} }
+  </style>
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+
+<header>
+  <div class="header-container">
+    <a href="https://saidnpro.github.io/home/" class="logo-container">
+      <img src="said.png" alt="Said Logo" />
+      <span class="said-v1">Said</span>
+    </a>
+    <i class="fas fa-bars burger" onclick="toggleMenu()"></i>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="https://saidnpro.github.io/home/">Home</a></li>
+        <li><a href="https://www.linkedin.com/in/saidnouasria" target="_blank">LinkedIn</a></li>
+        <li><a href="https://drive.google.com/file/d/1DoCbhXweRpk5ILa-hME1y6TvVgxA4fWR/view?usp=sharing" target="_blank">Full Resume</a></li>
+        <li><a href="https://drive.google.com/file/d/1e3GvL5mqzq4LYxHFsXojC90uahidsvZS/view?usp=sharing" target="_blank">Full Cover</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-label"><i class="fa-solid fa-building"></i> Onsite &amp; Remote</div>
+  <h1>On-site &amp; Remote Cover Letters</h1>
+  <p>My resume and cover letters are available in PDF format in both French and English, with each skill described in detail. All PDFs are stored on Google Drive for safe and smooth access.</p>
+</section>
+
+<div class="remote-badge">
+  <div class="remote-highlight">
+    <i class="fa-solid fa-circle-check"></i>
+    <p>With following technology trends and get the most out of new tech tools.
+
+      All sections, all cover letter PDFs, and resume translation to the French language and grammar checking are made through an AI assistant, not AI random generated. The core ideas of the design belong to me. All the skills descriptions and resume details <strong style="color:#34d399">are made carefully to be real and match my goal,</strong> and AI only assists me to correct my grammar and present myself well. Honesty is the first pillar of my career growth, and my recorded video acts as proof of my skills.
+      </p>
+  </div>
+</div>
+
+<div class="covers-section">
+
+  <div class="section-header">
+    <div class="section-header-label"><i class="fa-solid fa-file-pdf"></i> Resume in google drive</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">01</div>
+      <div class="cover-info">
+        <h3>My Resume — English &amp; French</h3>
+        <span>PDF &bull; Available in 2 languages</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1A8OlFwF19cVlww1FuXk6_KaMWBAbXx6k/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1wCRvGDyZcRKPh9EaA3kZb9GY38LchMGQ/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-header-label"><i class="fa-solid fa-file-lines"></i> Cover Letters in google drive</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">02</div>
+      <div class="cover-info">
+        <h3>Data Entry Cover Letter</h3>
+        <span>Word &bull; Excel &bull; PowerPoint &bull; Office Tools</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/14Z3R_36YmUBS50Br7ydqXOoJyz3CApBM/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/12TLsV45vqXpuEgehUpichY2myRqCP_0q/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">03</div>
+      <div class="cover-info">
+        <h3>WordPress &amp; Web Junior Designer Cover Letter</h3>
+        <span>Front-End &bull; Elementor &bull; WordPress</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1P84wSe_X-yqt1hLUYC2imkgI_LMCBfOo/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1kuFb17hVqOSIkVKln5QUIDKnVR87ZLeu/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">04</div>
+      <div class="cover-info">
+        <h3>Junior Graphic Designer Cover Letter</h3>
+        <span>Graphic Design &bull; AI Design &bull; Behance</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1_ZtcavAROcXU_8Z_ewA2fxdu3Zt4bGTf/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1bM2WvOOnRDVKYmInZE4MichVQRj-tg6m/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">05</div>
+      <div class="cover-info">
+        <h3>Junior Video Editor Cover Letter</h3>
+        <span>Video Editing &bull; YouTube &bull; Post-Production</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/10PjeJgJg5D46cAl6Nf6NWbkgtBUXKD5R/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1cygDiMixklFekOcHcXutDRO0pOpsNJDb/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">06</div>
+      <div class="cover-info">
+        <h3>3D Home Designer Cover Letter</h3>
+        <span>3D Architecture &bull; Modeling &bull; Rendering</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1a_fnJ_NA5NcLCX50lo8NWLsZI0mxRpEm/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1hfkhOpuaepWQUfZDZlPcesexvwppB3RM/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">07</div>
+      <div class="cover-info">
+        <h3>Operating System Installer and Fixer</h3>
+        <span>IT Support &bull; OS Installation &bull; Repair</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1jsC24EC3-UqAJulCc96laqhniatrWQ8I/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1iFvDMsh7lVHEezYCapWzUFYKpQ_T9uXC/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">08</div>
+      <div class="cover-info">
+        <h3>Customer Support &amp; Forex Market Customer Support</h3>
+        <span>Customer Service &bull; Forex &bull; Support</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="https://drive.google.com/file/d/1R-oTtxZ5xBFblELi1mYqIrgVuykEkHWs/view?usp=sharing" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="https://drive.google.com/file/d/1zZBzAXdy4Fu1wDTU333-YuY01rgT41dR/view?usp=sharing" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider-full"></div>
+
+
+
+<div class="remote-badge">
+  <div class="remote-highlight">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>  If the Google Drive link doesn't work or is broken, the same PDF files are also <strong style="color:#34d399"> hosted in a GitHub repository.</strong> The self-hosted GitHub link serves as a second option to access the documents.</span>
+  </div>
+</div>
+
+
+
+
+
+<div class="covers-section">
+
+  <div class="section-header">
+    <div class="section-header-label"><i class="fa-solid fa-file-pdf"></i> Resume in github</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">01</div>
+      <div class="cover-info">
+        <h3>My Resume — English &amp; French</h3>
+        <span>PDF &bull; Available in 2 languages</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="data entry/resume office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="data entry/resume office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-header-label"><i class="fa-solid fa-file-lines"></i> Cover Letters in github</div>
+    <div class="section-header-line"></div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">02</div>
+      <div class="cover-info">
+        <h3>Data Entry Cover Letter</h3>
+        <span>Word &bull; Excel &bull; PowerPoint &bull; Office Tools</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="data entry/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="data entry/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">03</div>
+      <div class="cover-info">
+        <h3>WordPress &amp; Web Junior Designer Cover Letter</h3>
+        <span>Front-End &bull; Elementor &bull; WordPress</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="web developpement/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="web developpement/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">04</div>
+      <div class="cover-info">
+        <h3>Junior Graphic Designer Cover Letter</h3>
+        <span>Graphic Design &bull; AI Design &bull; Behance</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="graphic design/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="graphic design/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">05</div>
+      <div class="cover-info">
+        <h3>Junior Video Editor Cover Letter</h3>
+        <span>Video Editing &bull; YouTube &bull; Post-Production</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="video editor/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="video editor/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">06</div>
+      <div class="cover-info">
+        <h3>3D Home Designer Cover Letter</h3>
+        <span>3D Architecture &bull; Modeling &bull; Rendering</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="3D office/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="3D office/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">07</div>
+      <div class="cover-info">
+        <h3>Operating System Installer and Fixer</h3>
+        <span>IT Support &bull; OS Installation &bull; Repair</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="operating system/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="operating system/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+  <div class="cover-card">
+    <div class="cover-card-left">
+      <div class="cover-num">08</div>
+      <div class="cover-info">
+        <h3>Customer Support &amp; Forex Market Customer Support</h3>
+        <span>Customer Service &bull; Forex &bull; Support</span>
+      </div>
+    </div>
+    <div class="cover-actions">
+      <a href="customer support/office eng.html" target="_blank" class="dl-btn en"><i class="fa-solid fa-download"></i> English</a>
+      <a href="customer support/office fr.html" target="_blank" class="dl-btn fr"><i class="fa-solid fa-download"></i> French</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <ul>
+        <li><a href="https://saidnpro.github.io/home/"><i class="fa-solid fa-house"></i><span>Go back to Home</span></a></li>
+        <li><a href="https://www.linkedin.com/in/saidnouasria/" target="_blank"><i class="fa-solid fa-circle-user"></i><span>linkedin.com/in/saidnouasria</span></a></li>
+        <li><a href="#"><i class="fa-solid fa-envelope"></i><span>saidnouasria.pro@gmail.com</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <ul>
+        <li><a href="https://saidpro.byethost7.com/?i=1" target="_blank"><i class="fa-brands fa-chrome"></i><span>WordPress Live Work</span></a></li>
+        <li><a href="https://www.youtube.com/@said-nouasria" target="_blank"><i class="fa-brands fa-youtube"></i><span>YouTube Channel</span></a></li>
+        <li><a href="https://www.behance.net/saidnouasria2" target="_blank"><i class="fa-brands fa-square-behance"></i><span>Behance Portfolio</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Said Nouasria </div>
+</footer>
+
+<script>
+const canvas=document.getElementById('particles-canvas');
+const ctx=canvas.getContext('2d');
+let W,H,particles=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+class P{constructor(){this.reset();}reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*1.4+0.3;this.vx=(Math.random()-0.5)*0.4;this.vy=(Math.random()-0.5)*0.4;this.alpha=Math.random()*0.4+0.1;this.c=Math.random()>0.6?'96,165,250':'59,130,246';}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset();}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(${this.c},${this.alpha})`;ctx.fill();}}
+for(let i=0;i<100;i++)particles.push(new P());
+function anim(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(anim);}
+anim();
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.cover-card,.section-header,.remote-highlight').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
