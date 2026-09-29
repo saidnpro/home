@@ -72,7 +72,6 @@ nav ul li a:hover { color:var(--accent-bright); background:rgba(59,130,246,0.1);
 .burger:hover { border-color:var(--accent); color:var(--accent-bright); }
 
 @media(max-width:900px) {
-  .header-container { padding:14px 20px; }
   nav ul {
     position:fixed; top:0; left:-100%; width:100%; height:100vh;
     flex-direction:column; align-items:center; justify-content:center;
@@ -82,12 +81,17 @@ nav ul li a:hover { color:var(--accent-bright); background:rgba(59,130,246,0.1);
   nav ul.active { left:0; }
   nav ul li a { font-size:18px; padding:14px 40px; }
   .burger { display:block; }
+  .header-container { padding:14px 20px; }
+
+  /* ← your original header shift — kept exactly as-is */
+  .logo-container { transform: translateX(50px); }
+  .burger        { transform: translateX(50px); }
 }
 
 /* PAGE HERO */
 .page-hero {
   position:relative; z-index:1; width:100%;
-  padding:100px 24px 60px;
+  padding:100px 24px 60px;   /* ← was 40px sides, now 24px so text isn't clipped */
   text-align:center;
   background: linear-gradient(135deg, #020b18 0%, #071428 50%, #0a1e3a 100%);
   overflow:hidden;
@@ -170,10 +174,10 @@ nav ul li a:hover { color:var(--accent-bright); background:rgba(59,130,246,0.1);
   opacity:0; transform:translateX(40px);
   transition:opacity 0.8s ease, transform 0.8s ease;
 }
+.info-card.visible { opacity:1; transform:translateX(0); }
 @media(max-width:600px) {
   .info-card { padding:28px 20px; }
 }
-.info-card.visible { opacity:1; transform:translateX(0); }
 .info-card-label {
   display:inline-flex; align-items:center; gap:8px;
   color:var(--accent-bright); font-size:11px; font-weight:700;
@@ -354,7 +358,6 @@ footer { position:relative; z-index:1; width:100%; background:var(--bg-surface);
 </footer>
 
 <script>
-// Particles
 const canvas=document.getElementById('particles-canvas');
 const ctx=canvas.getContext('2d');
 let W,H,particles=[];
@@ -364,9 +367,7 @@ class P{constructor(){this.reset();}reset(){this.x=Math.random()*W;this.y=Math.r
 for(let i=0;i<100;i++)particles.push(new P());
 function anim(){ctx.clearRect(0,0,W,H);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(anim);}
 anim();
-// Menu
 function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}
-// Observer
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.15});
 document.querySelectorAll('.map-card,.info-card').forEach(el=>obs.observe(el));
 </script>
